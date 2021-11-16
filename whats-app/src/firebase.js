@@ -1,3 +1,5 @@
+import firebase from "firebase";
+
 const firebaseConfig = {
   apiKey: "AIzaSyDYYaWQREJ_OdO5AZMNO6c_DAzWPkZHibM",
   authDomain: "whats-app-mern-6d66f.firebaseapp.com",
@@ -6,3 +8,10 @@ const firebaseConfig = {
   messagingSenderId: "1070016818254",
   appId: "1:1070016818254:web:d58994d10fee33a093271f",
 };
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
+
+export { auth, provider };
